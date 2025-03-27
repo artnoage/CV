@@ -21,6 +21,30 @@
             margin-bottom: 20px;
             border-bottom: 2px solid #2c3e50;
             padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        
+        .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+        }
+        
+        .name-title {
+            text-align: left;
         }
         
         .name {
@@ -177,13 +201,25 @@
             .section-title {
                 margin-top: 15px;
             }
+            
+            .photo {
+                width: 100px;
+                height: 100px;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="name">Vaios Laschos</div>
-        <div class="title">Mathematician & Machine Learning Researcher</div>
+        <div class="header-content">
+            <img src="id.jpg" alt="Vaios Laschos" class="photo">
+            <div class="name-title">
+                <div class="name">Vaios Laschos</div>
+                <div class="title">Mathematician & Machine Learning Researcher</div>
+            </div>
+        </div>
         
         <div class="contact-grid">
             <div class="contact-item">
