@@ -374,41 +374,57 @@
     <div class="section">
         <div class="section-title">RESEARCH EXPERTISE</div>
         
-        <div class="research-area">
-            <h3>Mathematical Foundations</h3>
-            <ul>
-                <li>Large Deviation Principle</li>
-                <li>Gradient Flows</li>
-                <li>Metrics on Spaces of Probabilities</li>
-                <li>PDEs</li>
-                <li>Fractal sets</li>
-                <li>Optimal Transportation</li>
-            </ul>
-        </div>
+        <style>
+            .expertise-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            @media print {
+                .expertise-grid {
+                    gap: 15px;
+                }
+            }
+        </style>
         
-        <div class="research-area">
-            <h3>Machine Learning & AI</h3>
-            <ul>
-                <li>Large Language Models (LLMs)</li>
-                <li>LLM Training for Reasoning</li>
-                <li>Optimal Transport for Machine Learning</li>
-                <li>Generative Networks with Optimal Transport</li>
-                <li>Reinforcement Learning</li>
-                <li>Meta-learning</li>
-                <li>Generative Adversarial Networks</li>
-                <li>Few-Shot Learning</li>
-                <li>Bayesian Methods</li>
-            </ul>
-        </div>
-        
-        <div class="research-area">
-            <h3>Optimization & Control Theory</h3>
-            <ul>
-                <li>Risk-Sensitive Decision Making</li>
-                <li>Stochastic Control Theory</li>
-                <li>Multi-agent Systems</li>
-                <li>Optimal Transport Applications</li>
-            </ul>
+        <div class="expertise-grid">
+            <div class="research-area">
+                <h3>Mathematical Foundations</h3>
+                <ul>
+                    <li>Large Deviation Principle</li>
+                    <li>Gradient Flows</li>
+                    <li>Metrics on Spaces of Probabilities</li>
+                    <li>PDEs</li>
+                    <li>Fractal sets</li>
+                    <li>Optimal Transportation</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Machine Learning & AI</h3>
+                <ul>
+                    <li>Large Language Models (LLMs)</li>
+                    <li>LLM Training for Reasoning</li>
+                    <li>Optimal Transport for Machine Learning</li>
+                    <li>Generative Networks with Optimal Transport</li>
+                    <li>Reinforcement Learning</li>
+                    <li>Meta-learning</li>
+                    <li>Generative Adversarial Networks</li>
+                    <li>Few-Shot Learning</li>
+                    <li>Bayesian Methods</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Optimization & Control Theory</h3>
+                <ul>
+                    <li>Risk-Sensitive Decision Making</li>
+                    <li>Stochastic Control Theory</li>
+                    <li>Multi-agent Systems</li>
+                    <li>Optimal Transport Applications</li>
+                </ul>
+            </div>
         </div>
     </div>
     
