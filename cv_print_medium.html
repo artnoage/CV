@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaios Laschos - Curriculum Vitae</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            font-size: 10.5pt;
+        }
+        
+        @page {
+            size: A4;
+            margin: 10mm 15mm 15mm 15mm;
+        }
+        
+        @page :first {
+            margin-top: 5mm;
+        }
+        
+        .header {
+            margin-bottom: 8px;
+            margin-top: 0;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 8px;
+            padding-top: 0;
+            page-break-after: avoid;
+            break-after: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2980b9;
+        }
+        
+        .name-title {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: #2c3e50;
+        }
+        
+        .title {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            font-size: 9pt;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 13px;
+            font-weight: bold;
+            border-bottom: 1px solid #2980b9;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            color: #2c3e50;
+        }
+        
+        .entry {
+            margin-bottom: 8px;
+        }
+        
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
+        
+        .institution {
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        
+        .position {
+            font-style: italic;
+            font-size: 9pt;
+        }
+        
+        .date {
+            font-size: 9pt;
+            color: #333;
+        }
+        
+        .description {
+            margin-top: 2px;
+            font-size: 9pt;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        
+        .skill-category h3 {
+            font-size: 11px;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1px;
+            font-size: 9pt;
+        }
+        
+        .research-area {
+            margin-bottom: 8px;
+        }
+        
+        .research-area h3 {
+            font-size: 11px;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        ul {
+            margin: 2px 0 6px 0;
+            padding-left: 16px;
+        }
+        
+        li {
+            margin-bottom: 0;
+            font-size: 9pt;
+        }
+        
+        .publication-stats {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .pub-stat {
+            text-align: center;
+            padding: 2px 6px;
+            border: 1px solid #2980b9;
+            background-color: #ecf0f1;
+            font-size: 9pt;
+        }
+        
+        .pub-number {
+            font-weight: bold;
+            color: #2980b9;
+        }
+        
+        p {
+            margin-bottom: 6px;
+            font-size: 9.5pt;
+            text-align: justify;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+        
+        /* Specific optimizations for professional summary */
+        .section:first-of-type p {
+            font-size: 9pt;
+            line-height: 1.35;
+            margin-bottom: 5px;
+        }
+        
+        @media print {
+            body {
+                padding: 10px;
+                margin: 0;
+                font-size: 9.5pt;
+                line-height: 1.3;
+            }
+            
+            /* Enable color printing */
+            * {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            /* Prevent page breaks after header */
+            .header {
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            
+            /* Keep first section with header */
+            .header + .section {
+                page-break-before: avoid;
+                break-before: avoid;
+            }
+            
+            .photo {
+                width: 70px;
+                height: 70px;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 10px;
+            }
+            
+            .section-title {
+                margin-top: 6px;
+                font-size: 12px;
+            }
+            
+            p {
+                font-size: 9pt;
+                margin-bottom: 4px;
+            }
+            
+            li {
+                font-size: 8.5pt;
+            }
+            
+            .description {
+                font-size: 8.5pt;
+            }
+            
+            .contact-grid {
+                font-size: 8pt;
+            }
+            
+            .expertise-grid {
+                gap: 8px;
+            }
+            
+            .skills-grid {
+                gap: 6px;
+            }
+            
+            /* Keep emojis in print but smaller */
+            .contact-item span {
+                font-size: 8pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="page-break-inside: avoid; break-inside: avoid;">
+    <div class="header" style="page-break-after: avoid !important;">
+        <div class="header-content">
+            <img src="id.jpg" alt="Vaios Laschos" class="photo">
+            <div class="name-title">
+                <div class="name">Vaios Laschos</div>
+                <div class="title">Mathematician & Machine Learning Researcher</div>
+            </div>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span>📧 </span><a href="mailto:artnoage@gmail.com">artnoage@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span>📱 </span><a href="tel:+4915780744980">+49 1578 0744980</a>
+            </div>
+            <div class="contact-item">
+                <span>🔗 </span><a href="https://www.linkedin.com/in/vaios-laschos-882b01b6">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <span>🌐 </span><a href="https://Metaskepsis.com">Metaskepsis.com</a>
+            </div>
+            <div class="contact-item">
+                <span>🤗 </span><a href="https://huggingface.co/Metaskepsis">HuggingFace</a>
+            </div>
+            <div class="contact-item">
+                <span>📊 </span><a href="https://github.com/artnoage">GitHub</a>
+            </div>
+        </div>
+        <div style="text-align: center; font-size: 8pt; margin-top: 4px;">
+            ORCID: 0000-0001-8721-5335
+        </div>
+    </div>
+    
+    <div class="section" style="page-break-before: avoid !important;">
+        <div class="section-title">Professional Summary</div>
+        <p>Applied mathematician with extensive postdoctoral experience, transitioning from foundational mathematical research to machine learning and AI systems. PhD in Applied Mathematics from University of Bath, UK, with expertise in statistical mechanics, large deviation theory, stochastic control, POMDPs, risk measures, and optimal transport theory - areas that now form important mathematical foundations for modern deep learning. Within optimal transport, I have specialized in Wasserstein spaces and Hellinger-Kantorovich spaces, independently discovering and studying the spherical Hellinger-Kantorovich space and contributing novel theoretical insights to optimal transport on curved manifolds. My career has spanned four countries (Greece, UK, USA, Germany), providing diverse research perspectives and collaborative experiences across international academic environments.</p>
+        
+        <p><strong>Mathematical Foundation to ML Innovation:</strong> My research journey reflects a deliberate evolution from abstract mathematical theory to practical AI applications. Beginning with pure mathematics (measure theory, topology, geometry, complex analysis), I specialized in statistical mechanics, large deviation theory, stochastic control, POMDPs, risk measures, and optimal transport theory - mathematical frameworks increasingly important to generative AI, optimal matching, and neural network training. This expertise directly enabled my supervision of research published at <strong>ICML 2025</strong> on Universal Neural Optimal Transport (UNOT), showing how Fourier Neural Operators can capture Wasserstein space geometry for machine learning applications.</p>
+        
+        <p><strong>Research Leadership & Mentorship:</strong> During my postdocs at TU-Berlin (Computer Science department) and WIAS Berlin, I've supervised over 20 master's theses spanning reinforcement learning for game environments, meta-learning, and neural optimization. My students have explored both gradient-based and evolutionary approaches, reflecting my commitment to diverse methodological perspectives in machine learning research. My most ambitious project has been developing ad hoc adaptation algorithms for the cooperative card game Hanabi - a challenging multi-agent coordination problem that has become something of a white whale for me, combining partial observability, communication constraints, and team adaptation challenges.</p>
+        
+        <p><strong>Current ML Research & Development:</strong> To gain practical experience and facilitate my transition to industry, I'm actively developing hands-on LLM capabilities through direct implementation. I've trained small LLMs with novel architectures, fine-tuned models up to 32B parameters, and applied reinforcement learning techniques (DPO, GRPO) to enhance mathematical and programming reasoning, including participation in the Kaggle AIME 25 competition. My work on the <strong>ARC-2 challenge</strong> involves developing synthetic data generation methods and exploring transformer architectures that separate rule generation from execution - addressing fundamental questions about systematic reasoning in AI systems.</p>
+        
+        <p><strong>Technical Implementation & Deployment:</strong> Beyond research, I've built practical ML applications including an agentic system for automatically fetching and processing arXiv papers with OCR and LLM analysis, a foreign language tutoring system with voice capabilities (developed before proprietary LLMs offered voice options), and a podcast generation tool similar to NotebookLM but with a novel feedback mechanism that uses TextGrad to automatically improve prompts based on user responses. These projects are distributed between my website (Metaskepsis.com) and GitHub repositories. I also participate in AI hackathons for agent development, demonstrating the combination of theoretical depth and practical implementation skills essential for both research and application development.</p>
+        
+        <p><strong>Near-Future Learning Projects:</strong> I'm developing agentic systems that enable LLMs to master unseen games - a research direction that serves as my laboratory for understanding the true capabilities and boundaries of modern AI. This work explores how large language models perform on "out-of-distribution" tasks, though I find this terminology somewhat paradoxical: the very notion of defining distributional boundaries presupposes an answer to what constitutes intelligence itself. At the same time, I'm exploring whether the meta-reflection capabilities I've acquired through years of mathematical research - my ability to understand and scaffold learning processes - can help these systems reason systematically about novel domains, revealing both the remarkable adaptability and the fundamental limitations of current architectures.</p>
+        
+        <p><strong>Professional Fit & Aspirations:</strong> I am well-suited for research-focused roles where mathematical rigor meets practical innovation. I can also contribute effectively to mid-senior level LLM development positions, with the understanding that my non-traditional path means some skills may need polishing - however, my mathematical foundation and meta-learning abilities allow me to cover new ground rapidly. Most importantly, I need to be part of a team that is genuinely passionate about their work and mission. I have difficulty treating work as merely work; I require purpose and meaning in what I'm building. The intersection of mathematical beauty and practical impact is where I thrive, whether that's advancing AI capabilities or solving real-world problems through intelligent systems.</p>
+    </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Academic Appointments</div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">WIAS</div>
+                    <div class="position">Postdoctoral Researcher</div>
+                </div>
+                <div class="date">2021 - Present</div>
+            </div>
+            <div class="description">
+                Research focus on Bayesian methods on optimal transport, optimal transport and rough paths, algorithms on discrete optimal transport, and Evolutionary Variational Inequalities (EVIs) on spaces of measures.
+            </div>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">Technical University of Berlin</div>
+                    <div class="position">Postdoctoral Researcher</div>
+                </div>
+                <div class="date">2018 - 2020</div>
+            </div>
+            <div class="description">
+                Conducted research on risk-sensitive decision making, POMDPs and risk under partial observability, optimal transport and machine learning, reinforcement learning and meta-learning techniques.
+            </div>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">WIAS</div>
+                    <div class="position">Postdoctoral Researcher</div>
+                </div>
+                <div class="date">2015 - 2017</div>
+            </div>
+            <div class="description">
+                Investigated metrics on spaces of probability measures.
+            </div>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">Brown University</div>
+                    <div class="position">Postdoctoral Researcher</div>
+                </div>
+                <div class="date">2013 - 2015</div>
+            </div>
+            <div class="description">
+                Researched large deviations for Gibbs configurations and multi-agent risk-sensitive stochastic control.
+            </div>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">MPI Leipzig</div>
+                    <div class="position">Guest Postdoctoral Researcher</div>
+                </div>
+                <div class="date">2013</div>
+            </div>
+            <div class="description">
+                Studied solutions of the Euler equation as quasigeodesics on the Wasserstein space.
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Education</div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">University of Bath</div>
+                    <div class="position">PhD in Applied Mathematics</div>
+                </div>
+                <div class="date">2009 - 2013</div>
+            </div>
+            <div class="description">
+                <strong>Thesis:</strong> Wasserstein gradient flows via large deviations from thermodynamic limits of independent particle models.
+            </div>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">Aristotle University of Thessaloniki</div>
+                    <div class="position">Master in Pure Mathematics</div>
+                </div>
+                <div class="date">2005 - 2009</div>
+            </div>
+            <div class="description">
+                <strong>Dissertation:</strong> Potential theory and Brownian motion
+            </div>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="institution">Aristotle University of Thessaloniki</div>
+                    <div class="position">Major in Pure Mathematics</div>
+                </div>
+                <div class="date">2000 - 2005</div>
+            </div>
+            <div class="description">
+                Focus on Real Analysis
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Research Expertise</div>
+        
+        <div class="expertise-grid">
+            <div class="research-area">
+                <h3>Mathematical Foundations</h3>
+                <ul>
+                    <li>Large Deviation Principle</li>
+                    <li>Gradient Flows</li>
+                    <li>Metrics on Spaces of Probabilities</li>
+                    <li>PDEs</li>
+                    <li>Fractal sets</li>
+                    <li>Optimal Transportation</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Machine Learning & AI</h3>
+                <ul>
+                    <li>Large Language Models (LLMs)</li>
+                    <li>LLM Training for Reasoning</li>
+                    <li>Optimal Transport for Machine Learning</li>
+                    <li>Generative Networks with Optimal Transport</li>
+                    <li>Reinforcement Learning</li>
+                    <li>Meta-learning</li>
+                    <li>Generative Adversarial Networks</li>
+                    <li>Few-Shot Learning</li>
+                    <li>Bayesian Methods</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Optimization & Control Theory</h3>
+                <ul>
+                    <li>Risk-Sensitive Decision Making</li>
+                    <li>Stochastic Control Theory</li>
+                    <li>Multi-agent Systems</li>
+                    <li>Optimal Transport Applications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Publications & Research Impact</div>
+        
+        <div class="publication-stats">
+            <div class="pub-stat">
+                <div class="pub-number">12</div>
+                <div>Journal Publications</div>
+            </div>
+            <div class="pub-stat">
+                <div class="pub-number">2</div>
+                <div>Conference Publications</div>
+            </div>
+            <div class="pub-stat">
+                <div class="pub-number">2</div>
+                <div>Submitted Papers</div>
+            </div>
+        </div>
+        
+        <div class="research-area">
+            <h3>Key Research Contributions</h3>
+            <ul>
+                <li>Developed new geometric properties of cones with applications on the Hellinger-Kantorovich space</li>
+                <li>Established gradient flow structures for McKean-Vlasov equations on discrete spaces</li>
+                <li>Investigated Wasserstein gradient flows from large deviations of many-particle limits</li>
+                <li>Advanced exit time risk-sensitive control for systems of cooperative agents</li>
+                <li>Explored risk sensitivity under partially observable Markov decision processes</li>
+                <li>Developed Fenchel-Moreau-Rockafellar type theorems on the Kantorovich-Wasserstein space</li>
+            </ul>
+        </div>
+        
+        <div class="research-area">
+            <h3>Notable Publication Venues</h3>
+            <p style="font-size: 9pt;">Journal of Functional Analysis, Electronic Journal of Probability, Mathematics of Control, Signals, and Systems, Journal of Mathematical Analysis and Applications, ESAIM: Control, Optimisation and Calculus of Variations, Journal of Mathematical Physics</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Teaching & Mentorship</div>
+        
+        <p>
+            Extensive teaching experience across multiple institutions, including tutorials in Calculus and Linear Algebra as a PhD student. 
+            Served as coordinator of the Probability seminar at Brown University for two consecutive years. 
+            At TU-Berlin, conducted several seminars on advanced topics in Reinforcement Learning and co-organized a course where students completed projects related to Machine Learning or Computational Neuroscience.
+        </p>
+        
+        <div class="research-area">
+            <h3>Student Supervision</h3>
+            <p>Supervised 20+ Master's theses (2019-2024) on diverse topics including:</p>
+            <ul>
+                <li><strong>Machine Learning & AI:</strong> LLM performance optimization, prompt engineering with RL, prompt optimization techniques, representation learning, few-shot classification</li>
+                <li><strong>Reinforcement Learning:</strong> Generative algorithms, deep neuroevolution, ad-hoc cooperation, risk-sensitive RL</li>
+                <li><strong>Optimal Transport:</strong> Generative adversarial learning, entropic optimal transport, Sinkhorn algorithm initializations</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Skills</div>
+        
+        <div class="skills-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="skill-category">
+                <h3>Technical & AI/ML Skills</h3>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <span>4/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>PyTorch</span>
+                    <span>4.5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Train NN of Various Architectures</span>
+                    <span>5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Fine-Tune LLMs</span>
+                    <span>4/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Prompt Optimization</span>
+                    <span>5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>LaTeX</span>
+                    <span>5.5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Git</span>
+                    <span>4.5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Haskell</span>
+                    <span>3.5/6</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Languages & Soft Skills</h3>
+                <div class="skill-item">
+                    <span>Greek (Native)</span>
+                    <span>5.5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>English (Fluent)</span>
+                    <span>5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>German (Intermediate)</span>
+                    <span>3/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Spanish (Intermediate)</span>
+                    <span>3/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Listening</span>
+                    <span>6/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Problem Solving</span>
+                    <span>5.5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Teamwork</span>
+                    <span>5.5/6</span>
+                </div>
+                <div class="skill-item">
+                    <span>Flexibility</span>
+                    <span>5/6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Personal Interests</div>
+        <p style="font-size: 9pt;">Climbing, Yoga, Travelling, Cooking, Trying random sports, Making decisions that take me far away from my comfort zone, and then complaining about those decisions.</p>
+    </div>
+</body>
+</html>
